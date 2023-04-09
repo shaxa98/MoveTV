@@ -64,7 +64,7 @@
     <div class="container text-center">
       <div class="d-flex flex-row justify-content-center">
         <!-- Registeration -->
-        <div class=" text-start  " id="regisration-form">
+        <div class="text-start" id="regisration-form">
           <h3 class="my-3">Create a Movie-TV account</h3>
           <form class="my-3">
             <div class=" mb-3">
@@ -88,9 +88,26 @@
             <h5 class="text-primary">Success</h5>
             <p class="card-text"> You have successfully registrated!
             </p>
-            <button class="btn btn-primary" type="button">Click to login</button>
+            <button class="btn btn-primary btn-lg" id="clickToLoginBtn" type="button">Click to login</button>
           </div>
         </div>
+
+        <!-- Login -->
+        <div class="text-start  d-none" id="login-form">
+          <h3 class="my-3">Login</h3>
+          <form class="my-3">
+            <div class=" mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg " id="register-submit">Submit</button>
+          </form>
+        </div>
+
 
       </div>
     </div>

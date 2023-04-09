@@ -3,6 +3,8 @@ const registerForm = document.getElementById('regisration-form');
 const registerSuccessBanner = document.getElementById(
   'regisration-success-bunner'
 );
+const loginForm = document.getElementById('login-form');
+const clickToLoginBtn = document.getElementById('clickToLoginBtn');
 
 const users = [];
 
@@ -19,4 +21,10 @@ registerSubmitBtn.onclick = () => {
   users.push(user);
   registerForm.classList.add('d-none');
   registerSuccessBanner.classList.remove('d-none');
+  console.log('users: ', users);
+};
+
+clickToLoginBtn.onclick = () => {
+  registerSuccessBanner.classList.add('d-none');
+  loginForm.classList.remove('d-none');
 };

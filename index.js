@@ -11,6 +11,24 @@ const user = {
   password: '',
 };
 
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+
+function register(username,password){
+  username = user 
+    password = pas
+   return('You are successfully registrated',username);
+   }
+function login(user,pas){
+  if(user===username && pas===pasword ) { 
+  return('You are welcome',username);
+    } 
+  else {
+    return('Wrong creadentials ')
+  }
+}
+
+
 registerSubmitBtn.onclick = () => {
   registerForm.classList.add('d-none');
   registerSuccessBanner.classList.remove('d-none');

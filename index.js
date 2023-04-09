@@ -5,11 +5,11 @@ const registerSuccessBanner = document.getElementById(
 );
 const users = [];
 
-const user = {
-  username: '',
-  email: '',
-  password: '',
-};
+// const user = {
+//   username: '',
+//   email: '',
+//   password: '',
+// };
 
 const username = document.getElementById('username');
 const password = document.getElementById('password');

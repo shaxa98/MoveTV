@@ -66,7 +66,7 @@
         <!-- Registeration -->
         <div class="text-start" id="regisration-form">
           <h3 class="my-3">Create a Movie-TV account</h3>
-          <form class="my-3">
+          
             <div class=" mb-3">
               <label for="username" class="form-label">Username</label>
               <input type="text" class="form-control" id="username">
@@ -80,7 +80,7 @@
               <input type="password" class="form-control" id="password">
             </div>
             <button type="submit" class="btn btn-primary btn-lg " id="register-submit">Submit</button>
-          </form>
+          
         </div>
         <!-- After regsitration -->
         <div class="d-flex  align-items-center  d-none" id="regisration-success-bunner" style=" height:30rem">
@@ -95,17 +95,37 @@
         <!-- Login -->
         <div class="text-start  d-none" id="login-form">
           <h3 class="my-3">Login</h3>
-          <form class="my-3">
+         
             <div class=" mb-3">
               <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password">
+              <input type="password" class="form-control" id="login-password">
             </div>
-            <button type="submit" class="btn btn-primary btn-lg " id="register-submit">Submit</button>
-          </form>
+            <button  class="btn btn-primary btn-lg " id="login-submit">Login</button>
+          
+        </div>
+
+        <!--You have successfully baner paydo mekadagi -->
+        <div class="d-flex  align-items-center  d-none" id="login-success-bunner" style=" height:30rem">
+          <div>
+            <h5 class="text-primary">Success</h5>
+            <p class="card-text"> You have successfully Logined!
+            </p>
+            
+          </div>
+        </div>
+        <!--Your pasword is nor correct banewra muburovardagi -->
+
+        <div class="d-flex  align-items-center  d-none" id="login-unsuccess-bunner" style=" height:30rem">
+          <div>
+            <h5 class="text-danger">Wrong</h5>
+            <p class="card-text"> Your PASSWORD is not correct!
+            </p>
+            
+          </div>
         </div>
 
 

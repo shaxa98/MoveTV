@@ -11,6 +11,12 @@ const users = [];
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
+const clicToLogin = document.getElementById('login-submit');
+const loginEmail = document.getElementById('login-email');
+const loginPassword = document.getElementById('login-password');
+const loginSucsesBaner = document.getElementById("login-success-bunner");
+const loginUnsucsesBaner =document.getElementById("login-unsuccess-bunner");
+console.log(loginUnsucsesBaner);
 
 registerSubmitBtn.onclick = () => {
   const user = {
@@ -28,3 +34,26 @@ clickToLoginBtn.onclick = () => {
   registerSuccessBanner.classList.add('d-none');
   loginForm.classList.remove('d-none');
 };
+
+clicToLogin.onclick = () => {
+  console.log(loginEmail.value , loginPassword.value);
+
+  for (let i = 0; i < users.length; i++ ) {
+    let user = users[i];
+    
+    loginForm.classList.add('d-none');
+    if(user.email===loginEmail.value && user.password===loginPassword.value ) { 
+        console.log('You are welcome',loginEmail.value);
+        
+        loginSucsesBaner.classList.remove('d-none');
+          } 
+        else {
+          console.log('Wrong creadentials ');
+          
+          loginUnsucsesBaner.classList.remove('d-none');
+
+        }
+  }
+
+
+}

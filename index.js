@@ -6,7 +6,15 @@ const registerSuccessBanner = document.getElementById(
 const loginForm = document.getElementById('login-form');
 const clickToLoginBtn = document.getElementById('clickToLoginBtn');
 
-const users = [];
+const users = [{
+  username: 'shaxa',
+  email: 'shaxa@mail.com',
+  password: '12345678',
+}, {
+  username: 'shaxa98',
+  email: 'shaxa@ooo.oo',
+  password: '4321'
+}];
 
 const username = document.getElementById('username');
 const email = document.getElementById('email');
@@ -16,7 +24,7 @@ const loginEmail = document.getElementById('login-email');
 const loginPassword = document.getElementById('login-password');
 const loginSucsesBaner = document.getElementById("login-success-bunner");
 const loginUnsucsesBaner =document.getElementById("login-unsuccess-bunner");
-console.log(loginUnsucsesBaner);
+
 
 registerSubmitBtn.onclick = () => {
   const user = {
@@ -43,17 +51,20 @@ clicToLogin.onclick = () => {
     
     loginForm.classList.add('d-none');
     if(user.email===loginEmail.value && user.password===loginPassword.value ) { 
-        console.log('You are welcome',loginEmail.value);
+      console.log('You are welcome',loginEmail.value);
+      
+      loginSucsesBaner.classList.remove('d-none');
+      break;
+        } 
+      else {
+        console.log('Wrong creadentials ');
         
-        loginSucsesBaner.classList.remove('d-none');
-          } 
-        else {
-          console.log('Wrong creadentials ');
-          
-          loginUnsucsesBaner.classList.remove('d-none');
-
-        }
+        loginUnsucsesBaner.classList.remove('d-none');
+  
+    
   }
+  
+    }
 
 
 }

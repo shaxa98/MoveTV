@@ -47,16 +47,43 @@ clickToLoginBtn.onclick = () => {
 
 clicToLogin.onclick = () => {
   loginForm.classList.add("d-none");
-  let userHast = false;
-  
+  // let userHast = false;
+
   // User hast nabudagesha meyobad
-  for (let i = 0; i < users.length; i++) {
-    let user = users[i];
-    if (user.email === loginEmail.value && user.password === loginPassword.value) {
-      userHast = true;
-      break;
-    } 
-  }
+  // for (let i = 0; i < users.length; i++) {
+  //   let user = users[i];
+  //   if (user.email === loginEmail.value && user.password === loginPassword.value) {
+  //     userHast = true;
+  //     break;
+  //   }
+  // }
+
+  // forof in baroyi array
+  // forin baroyi object
+  // for (const user of users) {
+  //   if (
+  //     user.email === loginEmail.value &&
+  //     user.password === loginPassword.value
+  //   ) {
+  //     userHast = true;
+  //     break;
+  //   }
+  // }
+
+  // users.forEach((user)=> {
+  //   if (
+  //     user.email === loginEmail.value &&
+  //     user.password === loginPassword.value
+  //   ) {
+  //     userHast = true;
+  //   }
+  // })
+
+  const userHast = users.some((user )=>  user.email === loginEmail.value &&
+  
+  user.password === loginPassword.value)
+
+
 
   if (userHast === true) {
     loginSucsesBaner.classList.remove("d-none");

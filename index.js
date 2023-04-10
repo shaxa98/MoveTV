@@ -45,24 +45,34 @@ clickToLoginBtn.onclick = () => {
 
 clicToLogin.onclick = () => {
   console.log(loginEmail.value , loginPassword.value);
+  let found = false;
 
   for (let i = 0; i < users.length; i++ ) {
     let user = users[i];
-    
+
+    const sameEmail =  user.email===loginEmail.value;
+    const samePasword = user.password===loginPassword.value;
+    const bothSame = sameEmail && samePasword;
     loginForm.classList.add('d-none');
-    if(user.email===loginEmail.value && user.password===loginPassword.value ) { 
+
+    if (bothSame) {
+      found == true;
       console.log('You are welcome',loginEmail.value);
       
       loginSucsesBaner.classList.remove('d-none');
       break;
         } 
-      else {
-        console.log('Wrong creadentials ');
-        
+        else {
+          console.log('Wrong creadentials ');
         loginUnsucsesBaner.classList.remove('d-none');
-  
+
+        }
+
     
-  }
+
+    
+    
+   
   
     }
 

@@ -77,13 +77,12 @@ clicToLogin.onclick = () => {
   //   ) {
   //     userHast = true;
   //   }
-  // })
+  //       })
 
-  const userHast = users.some((user )=>  user.email === loginEmail.value &&
-  
-  user.password === loginPassword.value)
-
-
+  const userHast = users.some(
+    (user) =>
+      user.email === loginEmail.value && user.password === loginPassword.value
+  );
 
   if (userHast === true) {
     loginSucsesBaner.classList.remove("d-none");

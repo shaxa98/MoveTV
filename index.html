@@ -1,143 +1,252 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movie TV</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Movie TV</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-  <!-- Header  -->
-  <nav class="navbar navbar-expand-lg bg-body-secondary">
-    <div class="container-fluid ">
-      <div class="row w-100">
-        <div class="col">
-          <a class="navbar-brand mx-5" href="#">
-            <img src="https://static.tvmaze.com/images/tvm-header-logo.png" alt="Bootstrap" width="140" height="50">
-          </a>
-        </div>
-        <div class="col my-2">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          </form>
-        </div>
-        <div class="col px-4 my-1">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Register</a>
-              </li>
-            </ul>
+  <body>
+    <!-- Header  -->
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+      <div class="container-fluid">
+        <div class="row w-100">
+          <div class="col">
+            <a class="navbar-brand mx-5" href="#">
+              <img
+                src="https://static.tvmaze.com/images/tvm-header-logo.png"
+                alt="Bootstrap"
+                width="140"
+                height="50"
+              />
+            </a>
+          </div>
+          <div class="col my-2">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+          <div class="col px-4 my-1">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Login</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Register</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Nav bars -->
-  <div class="container-fluid bg-info px-5 ">
-    <div class="btn-group py-2">
-      <a href="#" class="btn btn-info text-white" aria-current="page">Shows</a>
-      <a href="#" class="btn btn-info text-white">People </a>
-      <a href="#" class="btn btn-info text-white">Network </a>
-    </div>
-  </div>
-
-  <!-- Body -->
-  <div class="container-fluid px-5 py-3">
-
-    <nav aria-label="breadcrumb ">
-      <ol class="breadcrumb bg-body-secondary p-3 rounded">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Register</li>
-      </ol>
     </nav>
 
-    <div class="container text-center">
-      <div class="d-flex flex-row justify-content-center">
-        <!-- Registeration -->
-        <div class="text-start" id="regisration-form">
-          <h3 class="my-3">Create a Movie-TV account</h3>
-          
-            <div class=" mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control" id="username">
-            </div>
-            <div class=" mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password">
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg " id="register-submit">Submit</button>
-          
-        </div>
-        <!-- After regsitration -->
-        <div class="d-flex  align-items-center  d-none" id="regisration-success-bunner" style=" height:30rem">
-          <div>
-            <h5 class="text-primary">Success</h5>
-            <p class="card-text"> You have successfully registrated!
-            </p>
-            <button class="btn btn-primary btn-lg" id="clickToLoginBtn" type="button">Click to login</button>
-          </div>
-        </div>
-
-        <!-- Login -->
-        <div class="text-start  d-none" id="login-form">
-          <h3 class="my-3">Login</h3>
-         
-            <div class=" mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="login-password">
-            </div>
-            <button  class="btn btn-primary btn-lg " id="login-submit">Login</button>
-          
-        </div>
-
-        <!--You have successfully baner paydo mekadagi -->
-        <div class="d-flex  align-items-center  d-none" id="login-success-bunner" style=" height:30rem">
-          <div>
-            <h5 class="text-primary">Success</h5>
-            <p class="card-text"> You have successfully Logined!
-            </p>
-            
-          </div>
-        </div>
-        <!--Your pasword is nor correct banewra muburovardagi -->
-
-        <div class="d-flex  align-items-center  d-none" id="login-unsuccess-bunner" style=" height:30rem">
-          <div>
-            <h5 class="text-danger">Wrong</h5>
-            <p class="card-text"> Your PASSWORD is not correct!
-            </p>
-            
-          </div>
-        </div>
-
-
+    <!-- Nav bars -->
+    <div class="container-fluid bg-info px-5">
+      <div class="btn-group py-2">
+        <a href="#" class="btn btn-info text-white" aria-current="page"
+          >Shows</a
+        >
+        <a href="#" class="btn btn-info text-white">People </a>
+        <a href="#" class="btn btn-info text-white">Network </a>
       </div>
     </div>
-  </div>
 
+    <!-- Body -->
+    <div class="container-fluid px-5 py-3">
+      <nav aria-label="breadcrumb ">
+        <ol class="breadcrumb bg-body-secondary p-3 rounded">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Register</li>
+        </ol>
+      </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-  <script src="./index.js"></script>
-</body>
+      <div class="container text-center">
+        <div class="d-flex flex-row justify-content-center">
+          <!-- Registeration -->
+          <div class="text-start" id="regisration-form">
+            <h3 class="my-3">Create a Movie-TV account</h3>
 
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg"
+              id="register-submit"
+            >
+              Submit
+            </button>
+          </div>
+          <!-- After regsitration -->
+          <div
+            class="d-flex align-items-center d-none"
+            id="regisration-success-bunner"
+            style="height: 30rem"
+          >
+            <div>
+              <h5 class="text-primary">Success</h5>
+              <p class="card-text">You have successfully registrated!</p>
+              <button
+                class="btn btn-primary btn-lg"
+                id="clickToLoginBtn"
+                type="button"
+              >
+                Click to login
+              </button>
+            </div>
+          </div>
+
+          <!-- Login -->
+          <div class="text-start d-none" id="login-form">
+            <h3 class="my-3">Login</h3>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="login-email"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password" />
+            </div>
+            <button class="btn btn-primary btn-lg" id="login-submit">
+              Login
+            </button>
+          </div>
+
+          <!--You have successfully baner paydo mekadagi -->
+          <div
+            class="d-flex align-items-center d-none"
+            id="login-success-bunner"
+            style="height: 30rem"
+          >
+            <div>
+              <h5 class="text-primary">Success</h5>
+              <p class="card-text">You have successfully Logined!</p>
+            </div>
+          </div>
+          <!--Your pasword is nor correct banewra muburovardagi -->
+
+          <div
+            class="d-flex align-items-center d-none"
+            id="login-unsuccess-bunner"
+            style="height: 30rem"
+          >
+            <div>
+              <h5 class="text-danger">Wrong</h5>
+              <p class="card-text">Your PASSWORD is not correct!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--kinoya kategoriyesh-->
+    <div class="Kinoyakategoriyesh">
+      <header>
+        <h1>Popular shows airing tonight</h1>
+      </header>
+      <div class="card-group">
+        <div class="card">
+          <img
+            src="https://static.tvmaze.com/uploads/images/medium_portrait/424/1061886.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">FBI</h5>
+            <p class="card-text">Obligation</p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://static.tvmaze.com/uploads/images/medium_portrait/450/1126222.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Super & Lois</h5>
+            <p class="card-text">Head On</p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://static.tvmaze.com/uploads/images/medium_portrait/424/1061888.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">FBI: Most Want...</h5>
+            <p class="card-text">The Miseducation of Metcalf 2</p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://static.tvmaze.com/uploads/images/medium_portrait/437/1094146.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">9-1-1: Lone Star</h5>
+            <p class="card-text">Swipe Left</p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://static.tvmaze.com/uploads/images/medium_portrait/424/1061892.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">FBI: International</h5>
+            <p class="card-text">Jealous Mistress</p>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-outline-secondary">
+        More Show >
+      </button>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
 </html>

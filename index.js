@@ -6,15 +6,19 @@ const registerSuccessBanner = document.getElementById(
 const loginForm = document.getElementById("login-form");
 const clickToLoginBtn = document.getElementById("clickToLoginBtn");
 const clickToLogoBtn = document.getElementById("navbar-brand");
-// KinoKategoriyesh
-const kinoKaregoriyesh = documenr.getElementById('id="w-100');
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const clicToLogin = document.getElementById("login-submit");
+const loginEmail = document.getElementById("login-email");
+const loginPassword = document.getElementById("login-password");
+const loginSucsesBaner = document.getElementById("login-success-bunner");
+const loginUnsucsesBaner = document.getElementById("login-unsuccess-bunner");
+const Karegoriyesh = document.getElementById("id=w-100");
+const NavbarLogin = document.getElementById("nav-login active");
 
-clickToLogoBtn.onclick = () => {
-  loginForm.classList.add("d-none");
-  loginForm.classList.add("d-none");
-  registerSuccessBanner.classList.add("d-none");
-  loginUnsucsesBaner.classList.add("d-none");
-  kinoKaregoriyesh.classList.add("d-none");
+NavbarLogin.onclick = () => {
+  Karegoriyesh.classList.remove("d-none");
 };
 
 const users = [
@@ -29,15 +33,6 @@ const users = [
     password: "4321",
   },
 ];
-
-const username = document.getElementById("username");
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const clicToLogin = document.getElementById("login-submit");
-const loginEmail = document.getElementById("login-email");
-const loginPassword = document.getElementById("login-password");
-const loginSucsesBaner = document.getElementById("login-success-bunner");
-const loginUnsucsesBaner = document.getElementById("login-unsuccess-bunner");
 
 registerSubmitBtn.onclick = () => {
   const user = {

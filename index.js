@@ -5,6 +5,17 @@ const registerSuccessBanner = document.getElementById(
 );
 const loginForm = document.getElementById("login-form");
 const clickToLoginBtn = document.getElementById("clickToLoginBtn");
+const clickToLogoBtn = document.getElementById("navbar-brand");
+// KinoKategoriyesh
+const kinoKaregoriyesh = documenr.getElementById('id="w-100');
+
+clickToLogoBtn.onclick = () => {
+  loginForm.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  registerSuccessBanner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  kinoKaregoriyesh.classList.add("d-none");
+};
 
 const users = [
   {

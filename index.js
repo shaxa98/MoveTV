@@ -5,7 +5,7 @@ const registerSuccessBanner = document.getElementById(
 );
 const loginForm = document.getElementById("login-form");
 const clickToLoginBtn = document.getElementById("clickToLoginBtn");
-const clickToLogoBtn = document.getElementById("navbar-brand");
+
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -14,11 +14,36 @@ const loginEmail = document.getElementById("login-email");
 const loginPassword = document.getElementById("login-password");
 const loginSucsesBaner = document.getElementById("login-success-bunner");
 const loginUnsucsesBaner = document.getElementById("login-unsuccess-bunner");
-const Karegoriyesh = document.getElementById("id=w-100");
-const NavbarLogin = document.getElementById("nav-login active");
-
-NavbarLogin.onclick = () => {
-  Karegoriyesh.classList.remove("d-none");
+const mainBanner = document.getElementById("main");
+const navbarLogin = document.getElementById("nav-login active");
+const navbarLogo = document.getElementById("navbar-brand");
+const navbarRegister = document.getElementById("nav-reg active");
+navbarLogo.onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  clickToLoginBtn.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  registerForm.classList.add("d-none");
+  mainBanner.classList.remove("d-none");
+};
+navbarLogin.onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  clickToLoginBtn.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  registerForm.classList.add("d-none");
+  mainBanner.classList.add("d-none");
+  loginForm.classList.remove("d-none");
+};
+navbarRegister.onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  clickToLoginBtn.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  mainBanner.classList.add("d-none");
+  registerForm.classList.remove("d-none");
 };
 
 const users = [

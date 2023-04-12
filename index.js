@@ -18,10 +18,18 @@ const mainBanner = document.getElementById("main");
 const navbarLogin = document.getElementById("nav-login active");
 const navbarLogo = document.getElementById("navbar-brand");
 const navbarRegister = document.getElementById("nav-reg active");
+const whatchShow = document.getElementById("clickAfterLoginSuccessBtn");
 navbarLogo.onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
-  clickToLoginBtn.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  registerForm.classList.add("d-none");
+  mainBanner.classList.remove("d-none");
+};
+whatchShow.onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
   registerForm.classList.add("d-none");
@@ -29,7 +37,6 @@ navbarLogo.onclick = () => {
 };
 navbarLogin.onclick = () => {
   registerSuccessBanner.classList.add("d-none");
-  clickToLoginBtn.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
   registerForm.classList.add("d-none");
@@ -39,7 +46,6 @@ navbarLogin.onclick = () => {
 navbarRegister.onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
-  clickToLoginBtn.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
   mainBanner.classList.add("d-none");

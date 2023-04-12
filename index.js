@@ -19,6 +19,8 @@ const navbarLogin = document.getElementById("nav-login active");
 const navbarLogo = document.getElementById("navbar-brand");
 const navbarRegister = document.getElementById("nav-reg active");
 const whatchShow = document.getElementById("clickAfterLoginSuccessBtn");
+const moviesContainer = document.getElementById("movies-container");
+
 navbarLogo.onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
@@ -127,3 +129,39 @@ clicToLogin.onclick = () => {
     loginUnsucsesBaner.classList.remove("d-none");
   }
 };
+
+const movieCard = (imgUrl, title, description) => {
+  return `<div class="card">
+  <img
+  src="${imgUrl}"
+  class="card-img-top"
+  alt="..."
+  />
+  <div class="card-body">
+  <h5 class="card-title">${title}</h5>
+  <p class="card-text">${description}</p>
+  </div>
+  </div>`;
+};
+
+const movies = [
+  {
+    imgUrl:
+      "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
+    title: "Money Plane",
+    description: "A professional thief with $40 ",
+  },
+  {
+    imgUrl:
+      "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
+    title: "Money Plane",
+    description: "A professional thief with $40 ",
+  },
+];
+
+let moviesHTML = "";
+for (const movie of movies) {
+  const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+  moviesHTML += movieHTML;
+}
+moviesContainer.innerHTML = moviesHTML;

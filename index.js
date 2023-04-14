@@ -207,16 +207,27 @@ const movies = [
   },
 ];
 
+// let moviesHTML = "";
+// for (const movie of movies) {
+//   const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+//   moviesHTML += movieHTML;
+// }
+// moviesContainer.innerHTML = moviesHTML;
+
+//search function
+
+let fsearch = "";
+const find = movies.filter(function (search) {
+  if (fsearch === "") {
+    return true;
+  }
+  return search.title === fsearch;
+});
+console.log(find);
+
 let moviesHTML = "";
-for (const movie of movies) {
+for (const movie of find) {
   const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
   moviesHTML += movieHTML;
 }
 moviesContainer.innerHTML = moviesHTML;
-
-//const searchBtn = document.getElementById("search-btn");
-
-const find = movies.findIndex(function (search, movies) {
-  return search.title === "samthing";
-});
-console.log(search);

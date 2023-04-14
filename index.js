@@ -213,3 +213,10 @@ for (const movie of movies) {
   moviesHTML += movieHTML;
 }
 moviesContainer.innerHTML = moviesHTML;
+
+//const searchBtn = document.getElementById("search-btn");
+
+const find = movies.findIndex(function (search, movies) {
+  return search.title === "samthing";
+});
+console.log(search);

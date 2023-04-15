@@ -20,9 +20,8 @@ const navbarLogo = document.getElementById("navbar-brand");
 const navbarRegister = document.getElementById("nav-reg active");
 const whatchShow = document.getElementById("clickAfterLoginSuccessBtn");
 const moviesContainer = document.getElementById("movies-container");
-
+const searchIcon = document.getElementById("search-icon");
 const search = document.getElementById("search-btn");
-console.log(search);
 
 navbarLogo.onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -220,14 +219,29 @@ const movies = [
 //search function
 
 let fsearch = "";
+searchIcon.onclick = () => {
+  fsearch = search.value;
+  const find = movies.filter(function (search) {
+    if (fsearch === "") {
+      return true;
+    }
+    return search.title === fsearch;
+  });
+  let moviesHTML = "";
+  for (const movie of find) {
+    const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+    moviesHTML += movieHTML;
+  }
+  moviesContainer.innerHTML = moviesHTML;
+};
+
+console.log(fsearch);
 const find = movies.filter(function (search) {
   if (fsearch === "") {
     return true;
   }
   return search.title === fsearch;
 });
-console.log(find);
-
 let moviesHTML = "";
 for (const movie of find) {
   const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);

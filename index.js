@@ -21,6 +21,9 @@ const navbarRegister = document.getElementById("nav-reg active");
 const whatchShow = document.getElementById("clickAfterLoginSuccessBtn");
 const moviesContainer = document.getElementById("movies-container");
 
+const search = document.getElementById("search-btn");
+console.log(search);
+
 navbarLogo.onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");

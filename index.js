@@ -30,8 +30,8 @@ navbarLogo.onclick = () => {
   loginUnsucsesBaner.classList.add("d-none");
   registerForm.classList.add("d-none");
   mainBanner.classList.remove("d-none");
-  fsearch = "";
-  yagonchiz("");
+
+  makeBaner("");
 };
 whatchShow.onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -211,7 +211,7 @@ const movies = [
   },
 ];
 
-function yagonchiz(yak) {
+function makeBaner(yak) {
   const find = movies.filter(function (search) {
     if (yak === "") {
       return true;
@@ -225,6 +225,7 @@ function yagonchiz(yak) {
   }
   moviesContainer.innerHTML = moviesHTML;
 }
+makeBaner("");
 
 searchIcon.onclick = () => {
   yagonchiz(search.value);

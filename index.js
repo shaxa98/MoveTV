@@ -31,18 +31,7 @@ navbarLogo.onclick = () => {
   registerForm.classList.add("d-none");
   mainBanner.classList.remove("d-none");
   fsearch = "";
-  const find = movies.filter(function (search) {
-    if (fsearch === "") {
-      return true;
-    }
-    return search.title === fsearch;
-  });
-  let moviesHTML = "";
-  for (const movie of find) {
-    const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
-    moviesHTML += movieHTML;
-  }
-  moviesContainer.innerHTML = moviesHTML;
+  yagonchiz("");
 };
 whatchShow.onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -231,14 +220,29 @@ const movies = [
 
 //search function
 
-let fsearch = "";
-searchIcon.onclick = () => {
-  fsearch = search.value;
+function yagonchiz(yak) {
   const find = movies.filter(function (search) {
-    if (fsearch === "") {
+    if (yak === "") {
       return true;
     }
-    return search.title === fsearch;
+
+    return search.title === yak;
+  });
+  console.log(find);
+  let moviesHTML = "";
+  for (const movie of find) {
+    const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+    moviesHTML += movieHTML;
+  }
+  moviesContainer.innerHTML = moviesHTML;
+}
+
+searchIcon.onclick = () => {
+  const find = movies.filter(function (search) {
+    if (search.value === "") {
+      return true;
+    }
+    return search.title === search.value;
   });
   let moviesHTML = "";
   for (const movie of find) {
@@ -248,7 +252,6 @@ searchIcon.onclick = () => {
   moviesContainer.innerHTML = moviesHTML;
 };
 
-console.log(fsearch);
 const find = movies.filter(function (search) {
   if (fsearch === "") {
     return true;

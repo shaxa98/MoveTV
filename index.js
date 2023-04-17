@@ -30,6 +30,19 @@ navbarLogo.onclick = () => {
   loginUnsucsesBaner.classList.add("d-none");
   registerForm.classList.add("d-none");
   mainBanner.classList.remove("d-none");
+  fsearch = "";
+  const find = movies.filter(function (search) {
+    if (fsearch === "") {
+      return true;
+    }
+    return search.title === fsearch;
+  });
+  let moviesHTML = "";
+  for (const movie of find) {
+    const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+    moviesHTML += movieHTML;
+  }
+  moviesContainer.innerHTML = moviesHTML;
 };
 whatchShow.onclick = () => {
   registerSuccessBanner.classList.add("d-none");

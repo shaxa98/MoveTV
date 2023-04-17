@@ -238,29 +238,5 @@ function yagonchiz(yak) {
 }
 
 searchIcon.onclick = () => {
-  const find = movies.filter(function (search) {
-    if (search.value === "") {
-      return true;
-    }
-    return search.title === search.value;
-  });
-  let moviesHTML = "";
-  for (const movie of find) {
-    const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
-    moviesHTML += movieHTML;
-  }
-  moviesContainer.innerHTML = moviesHTML;
+  yagonchiz(search.value);
 };
-
-const find = movies.filter(function (search) {
-  if (fsearch === "") {
-    return true;
-  }
-  return search.title === fsearch;
-});
-let moviesHTML = "";
-for (const movie of find) {
-  const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
-  moviesHTML += movieHTML;
-}
-moviesContainer.innerHTML = moviesHTML;

@@ -237,6 +237,4 @@ Eror or error
 
 searchIcon.onclick = () => {
   makeBaner(search.value);
-
-  moviesContainer.innerHTML = erorHTML;
 };

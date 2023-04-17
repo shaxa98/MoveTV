@@ -211,24 +211,13 @@ const movies = [
   },
 ];
 
-// let moviesHTML = "";
-// for (const movie of movies) {
-//   const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
-//   moviesHTML += movieHTML;
-// }
-// moviesContainer.innerHTML = moviesHTML;
-
-//search function
-
 function yagonchiz(yak) {
   const find = movies.filter(function (search) {
     if (yak === "") {
       return true;
     }
-
     return search.title === yak;
   });
-  console.log(find);
   let moviesHTML = "";
   for (const movie of find) {
     const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);

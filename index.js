@@ -34,11 +34,12 @@ navbarLogo.onclick = () => {
   makeBaner("");
 };
 whatchShow.onclick = () => {
+  registerForm.classList.add("d-none");
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
-  registerForm.classList.add("d-none");
+
   mainBanner.classList.remove("d-none");
 };
 navbarLogin.onclick = () => {
@@ -227,6 +228,15 @@ function makeBaner(yak) {
 }
 makeBaner("");
 
+const erorHTML = `<h1
+class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"
+data-v-fce19382=""
+>
+Eror or error
+</h1>`;
+
 searchIcon.onclick = () => {
-  yagonchiz(search.value);
+  makeBaner(search.value);
+
+  moviesContainer.innerHTML = erorHTML;
 };

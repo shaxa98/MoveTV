@@ -1,7 +1,10 @@
 // const movies =  htmlba scripta danashba
 // const users =  htmlba scripta danashba
 
-const registerSubmitBtn = document.getElementById("register-submit");
+const get = (elId) => {
+  return document.getElementById(elId);
+};
+
 const registerForm = document.getElementById("regisration-form");
 const registerSuccessBanner = document.getElementById(
   "regisration-success-bunner"
@@ -11,7 +14,6 @@ const clickToLoginBtn = document.getElementById("clickToLoginBtn");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-const clicToLogin = document.getElementById("login-submit");
 const loginEmail = document.getElementById("login-email");
 const loginPassword = document.getElementById("login-password");
 const loginSucsesBaner = document.getElementById("login-success-bunner");
@@ -60,7 +62,7 @@ navbarRegister.onclick = () => {
   registerForm.classList.remove("d-none");
 };
 
-registerSubmitBtn.onclick = () => {
+get("register-submit").onclick = () => {
   const user = {
     username: username.value,
     email: email.value,
@@ -77,7 +79,7 @@ clickToLoginBtn.onclick = () => {
   loginForm.classList.remove("d-none");
 };
 
-clicToLogin.onclick = () => {
+get("login-submit").onclick = () => {
   loginForm.classList.add("d-none");
   const userHast = users.some(
     (user) =>

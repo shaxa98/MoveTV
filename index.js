@@ -211,14 +211,26 @@ const movies = [
     description: "Magic Johnson",
   },
 ];
+const erorHTML = `<h1
+class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"
+data-v-fce19382=""
+>
+Eror or error
+</h1>`;
 
 function makeBaner(yak) {
   const find = movies.filter(function (search) {
     if (yak === "") {
       return true;
     }
+
     return search.title === yak;
   });
+  console.log(find);
+  if (find.length === 0) {
+moviesContainer.innerHTML = erorHTML;
+ return;
+}
   let moviesHTML = "";
   for (const movie of find) {
     const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
@@ -228,12 +240,7 @@ function makeBaner(yak) {
 }
 makeBaner("");
 
-const erorHTML = `<h1
-class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"
-data-v-fce19382=""
->
-Eror or error
-</h1>`;
+
 
 searchIcon.onclick = () => {
   makeBaner(search.value);

@@ -95,44 +95,31 @@ const movieCard = (imgUrl, title, description) => {
   <img
   src="${imgUrl}"
   class="card-img-top"
-  alt="..."
   />
   <div class="card-body">
   <h5 class="card-title">${title}</h5>
   <p class="card-text">${description}</p>
-  </div>
-  </div>`;
+  </div> </div>`;
 };
+const erorHTML = `<h1 class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"> Not Found</h1>`;
 
-const erorHTML = `<h1
-class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"
-data-v-fce19382=""
->
-Eror or error
-</h1>`;
-
-function makeBaner(yak) {
-  const find = movies.filter(function (search) {
-    if (yak === "") {
-      return true;
-    }
-
-    return search.title === yak;
+const makeBaner = () => {
+  const searchInput = search.value;
+  const filteredMovies = movies.filter((movie) => {
+    return searchInput === "" ? true : movie.title === searchInput;
   });
-  console.log(find);
-  if (find.length === 0) {
-    moviesContainer.innerHTML = erorHTML;
-    return;
-  }
-  let moviesHTML = "";
-  for (const movie of find) {
-    const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
-    moviesHTML += movieHTML;
-  }
-  moviesContainer.innerHTML = moviesHTML;
-}
-makeBaner("");
 
-searchIcon.onclick = () => {
-  makeBaner(search.value);
+  if (filteredMovies.length === 0) {
+    moviesContainer.innerHTML = erorHTML;
+  } else {
+    let moviesHTML = "";
+    for (const movie of filteredMovies) {
+      const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+      moviesHTML += movieHTML;
+    }
+    moviesContainer.innerHTML = moviesHTML;
+  }
 };
+
+searchIcon.onclick = makeBaner;
+makeBaner();

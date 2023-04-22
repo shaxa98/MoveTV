@@ -1,3 +1,6 @@
+// const movies =  htmlba scripta danashba
+// const users =  htmlba scripta danashba
+
 const registerSubmitBtn = document.getElementById("register-submit");
 const registerForm = document.getElementById("regisration-form");
 const registerSuccessBanner = document.getElementById(
@@ -5,7 +8,6 @@ const registerSuccessBanner = document.getElementById(
 );
 const loginForm = document.getElementById("login-form");
 const clickToLoginBtn = document.getElementById("clickToLoginBtn");
-
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -30,7 +32,6 @@ navbarLogo.onclick = () => {
   loginUnsucsesBaner.classList.add("d-none");
   registerForm.classList.add("d-none");
   mainBanner.classList.remove("d-none");
-
   makeBaner("");
 };
 whatchShow.onclick = () => {
@@ -59,19 +60,6 @@ navbarRegister.onclick = () => {
   registerForm.classList.remove("d-none");
 };
 
-const users = [
-  {
-    username: "shaxa",
-    email: "shaxa@mail.com",
-    password: "12345678",
-  },
-  {
-    username: "shaxa98",
-    email: "shaxa@ooo.oo",
-    password: "4321",
-  },
-];
-
 registerSubmitBtn.onclick = () => {
   const user = {
     username: username.value,
@@ -91,43 +79,10 @@ clickToLoginBtn.onclick = () => {
 
 clicToLogin.onclick = () => {
   loginForm.classList.add("d-none");
-  // let userHast = false;
-
-  // User hast nabudagesha meyobad
-  // for (let i = 0; i < users.length; i++) {
-  //   let user = users[i];
-  //   if (user.email === loginEmail.value && user.password === loginPassword.value) {
-  //     userHast = true;
-  //     break;
-  //   }
-  // }
-
-  // forof in baroyi array
-  // forin baroyi object
-  // for (const user of users) {
-  //   if (
-  //     user.email === loginEmail.value &&
-  //     user.password === loginPassword.value
-  //   ) {
-  //     userHast = true;
-  //     break;
-  //   }
-  // }
-
-  // users.forEach((user)=> {
-  //   if (
-  //     user.email === loginEmail.value &&
-  //     user.password === loginPassword.value
-  //   ) {
-  //     userHast = true;
-  //   }
-  //       })
-
   const userHast = users.some(
     (user) =>
       user.email === loginEmail.value && user.password === loginPassword.value
   );
-
   if (userHast === true) {
     loginSucsesBaner.classList.remove("d-none");
   } else {
@@ -149,68 +104,6 @@ const movieCard = (imgUrl, title, description) => {
   </div>`;
 };
 
-const movies = [
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/456/1140585.jpg",
-    title: "This Is Mark Rober",
-    description: "Elephant Toothpaste ",
-  },
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/424/1061065.jpg",
-    title: "Grey's Anatomy",
-    description: "Elephant Toothpaste",
-  },
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/424/1060718.jpg",
-    title: "Young Sheldon",
-    description: "A German Folk Song and an Actual Adult",
-  },
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/424/1061060.jpg",
-    title: "Station 19",
-    description: "Get It All Out",
-  },
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/427/1068494.jpg",
-    title: "CSI: Vegas",
-    description: "Fractured",
-  },
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/422/1055236.jpg",
-    title: "Ghosts",
-    description: "Ghost Father of the Bride",
-  },
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/456/1140582.jpg",
-    title: "Single Drunk Female",
-    description: "Promotion",
-  },
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/455/1139659.jpg",
-    title: "'Til Death Do Us Part Kourtney & Travis",
-    description: "Til Death Do Us Part Kourtney & Travis",
-  },
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/456/1140584.jpg",
-    title: "Headliners with Rachel Nichols",
-    description: "TBD",
-  },
-  {
-    imgUrl:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/441/1104117.jpg",
-    title: "The Best of All the Smoke with Matt Barnes and Stephen Jackson",
-    description: "Magic Johnson",
-  },
-];
 const erorHTML = `<h1
 class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"
 data-v-fce19382=""
@@ -228,9 +121,9 @@ function makeBaner(yak) {
   });
   console.log(find);
   if (find.length === 0) {
-moviesContainer.innerHTML = erorHTML;
- return;
-}
+    moviesContainer.innerHTML = erorHTML;
+    return;
+  }
   let moviesHTML = "";
   for (const movie of find) {
     const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
@@ -239,8 +132,6 @@ moviesContainer.innerHTML = erorHTML;
   moviesContainer.innerHTML = moviesHTML;
 }
 makeBaner("");
-
-
 
 searchIcon.onclick = () => {
   makeBaner(search.value);

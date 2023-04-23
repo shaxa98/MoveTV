@@ -1,6 +1,3 @@
-// const movies =  htmlba scripta danashba
-// const users =  htmlba scripta danashba
-
 const get = (elId) => {
   return document.getElementById(elId);
 };
@@ -20,23 +17,17 @@ const loginUnsucsesBaner = document.getElementById("login-unsuccess-bunner");
 const mainBanner = document.getElementById("main");
 const moviesContainer = document.getElementById("movies-container");
 const search = document.getElementById("search-btn");
-//const clickToLoginBtn = document.getElementById("clickToLoginBtn");
-//const navbarLogin = document.getElementById("nav-login active");
-//const navbarLogo = document.getElementById("navbar-brand");
-//const navbarRegister = document.getElementById("nav-reg active");
-//const whatchShow = document.getElementById("clickAfterLoginSuccessBtn");
-//const searchIcon = document.getElementById("search-icon");
 
-get('navbar-brand').onclick = () => {
+get("navbar-brand").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
   registerForm.classList.add("d-none");
   mainBanner.classList.remove("d-none");
-  makeBaner("");
+  // makeBaner();
 };
-get('clickAfterLoginSuccessBtn').onclick = () => {
+get("clickAfterLoginSuccessBtn").onclick = () => {
   registerForm.classList.add("d-none");
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
@@ -45,7 +36,7 @@ get('clickAfterLoginSuccessBtn').onclick = () => {
 
   mainBanner.classList.remove("d-none");
 };
-get('nav-login active').onclick = () => {
+get("nav-login active").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
@@ -53,7 +44,7 @@ get('nav-login active').onclick = () => {
   mainBanner.classList.add("d-none");
   loginForm.classList.remove("d-none");
 };
-get('nav-reg active').onclick = () => {
+get("nav-reg active").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
@@ -74,7 +65,7 @@ get("register-submit").onclick = () => {
   console.log("users: ", users);
 };
 
-get('clickToLoginBtn').onclick = () => {
+get("clickToLoginBtn").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.remove("d-none");
 };
@@ -105,23 +96,33 @@ const movieCard = (imgUrl, title, description) => {
 };
 const erorHTML = `<h1 class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"> Not Found</h1>`;
 
-const makeBaner = () => {
-  const searchInput = search.value;
-  const filteredMovies = movies.filter((movie) => {
-    return searchInput === "" ? true : movie.title === searchInput;
-  });
-
-  if (filteredMovies.length === 0) {
-    moviesContainer.innerHTML = erorHTML;
-  } else {
-    let moviesHTML = "";
-    for (const movie of filteredMovies) {
-      const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
-      moviesHTML += movieHTML;
-    }
-    moviesContainer.innerHTML = moviesHTML;
+const makeBaner = (movies) => {
+  let moviesHTML = "";
+  for (const movie of movies) {
+    const movieHTML = movieCard(movie.image.medium, movie.name, "");
+    moviesHTML += movieHTML;
   }
+  moviesContainer.innerHTML = moviesHTML;
 };
 
-get('search-icon').onclick = makeBaner;
-makeBaner();
+fetch("http://api.tvmaze.com/shows")
+  .then((response) => response.json())
+  .then((data) => {
+    // data = [shows = {}]
+    makeBaner(data);
+  });
+
+get("search-icon").onclick = () => {
+  const searchInput = search.value;
+  console.log("searchInput: ", searchInput);
+  fetch(`http://api.tvmaze.com/search/shows?q=${searchInput}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // data  = [score ={}, shows = {}]
+      const shows = [];
+      for (const item of data) {
+        shows.push(item.show);
+      }
+      makeBaner(shows);
+    });
+};

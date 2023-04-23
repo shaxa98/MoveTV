@@ -10,7 +10,6 @@ const registerSuccessBanner = document.getElementById(
   "regisration-success-bunner"
 );
 const loginForm = document.getElementById("login-form");
-const clickToLoginBtn = document.getElementById("clickToLoginBtn");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -19,15 +18,16 @@ const loginPassword = document.getElementById("login-password");
 const loginSucsesBaner = document.getElementById("login-success-bunner");
 const loginUnsucsesBaner = document.getElementById("login-unsuccess-bunner");
 const mainBanner = document.getElementById("main");
-const navbarLogin = document.getElementById("nav-login active");
-const navbarLogo = document.getElementById("navbar-brand");
-const navbarRegister = document.getElementById("nav-reg active");
-const whatchShow = document.getElementById("clickAfterLoginSuccessBtn");
 const moviesContainer = document.getElementById("movies-container");
-const searchIcon = document.getElementById("search-icon");
 const search = document.getElementById("search-btn");
+//const clickToLoginBtn = document.getElementById("clickToLoginBtn");
+//const navbarLogin = document.getElementById("nav-login active");
+//const navbarLogo = document.getElementById("navbar-brand");
+//const navbarRegister = document.getElementById("nav-reg active");
+//const whatchShow = document.getElementById("clickAfterLoginSuccessBtn");
+//const searchIcon = document.getElementById("search-icon");
 
-navbarLogo.onclick = () => {
+get('navbar-brand').onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
@@ -36,7 +36,7 @@ navbarLogo.onclick = () => {
   mainBanner.classList.remove("d-none");
   makeBaner("");
 };
-whatchShow.onclick = () => {
+get('clickAfterLoginSuccessBtn').onclick = () => {
   registerForm.classList.add("d-none");
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
@@ -45,7 +45,7 @@ whatchShow.onclick = () => {
 
   mainBanner.classList.remove("d-none");
 };
-navbarLogin.onclick = () => {
+get('nav-login active').onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
@@ -53,7 +53,7 @@ navbarLogin.onclick = () => {
   mainBanner.classList.add("d-none");
   loginForm.classList.remove("d-none");
 };
-navbarRegister.onclick = () => {
+get('nav-reg active').onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
@@ -74,7 +74,7 @@ get("register-submit").onclick = () => {
   console.log("users: ", users);
 };
 
-clickToLoginBtn.onclick = () => {
+get('clickToLoginBtn').onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.remove("d-none");
 };
@@ -123,5 +123,5 @@ const makeBaner = () => {
   }
 };
 
-searchIcon.onclick = makeBaner;
+get('search-icon').onclick = makeBaner;
 makeBaner();

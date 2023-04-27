@@ -54,6 +54,19 @@ const movie = {
     },
   },
 };
+const baner = `<img
+style="
+  display: block;
+  -webkit-user-select: none;
+  margin: auto;
+  cursor: zoom-in;
+  background-color: hsl(0, 0%, 90%);
+  transition: background-color 300ms;
+"
+src="https://raw.githubusercontent.com/Bekhzod96/TvMazeApp/master/public/images/result_2.png"
+width="575"
+height="528"
+/>`;
 
 // const movies = [
 //   {

@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
+    background-color: black;
 }
 .containar {
     display:flex;
@@ -34,13 +35,13 @@ h1 {
 p {
 font-size: 20px;
 margin: 20px;
-visibility: hidden;
+
 
 }
 span{
     font-weight: bold;
 }
-.card:hover{
+/* .card:hover{
     cursor: pointer;
 }
 .card:hover .summary{
@@ -52,4 +53,4 @@ span{
     opacity: 1;
     visibility: visible;
 
-}
+} */

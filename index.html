@@ -14,90 +14,95 @@
   </head>
 
   <body>
-    <!-- Header  -->
-    <nav class="navbar navbar-expand-lg bg-body-secondary">
-      <div class="container-fluid">
-        <div class="container">
-          <div class="row w-100">
-            <div class="col">
-              <a class="navbar-brand" id="navbar-brand" href="#">
-                <img
-                  src="https://static.tvmaze.com/images/tvm-header-logo.png"
-                  alt="Bootstrap"
-                  width="140"
-                  height="50"
-                />
-              </a>
-            </div>
+    <header>
+      <!-- Header  -->
+      <nav class="navbar navbar-expand-lg bg-body-secondary">
+        <div class="container-fluid">
+          <div class="container">
+            <div class="row w-100">
+              <div class="col">
+                <a class="navbar-brand" id="navbar-brand" href="#">
+                  <img
+                    src="https://static.tvmaze.com/images/tvm-header-logo.png"
+                    alt="Bootstrap"
+                    width="140"
+                    height="50"
+                  />
+                </a>
+              </div>
 
-            <div class="col my-2 d-flex">
-              <input
-                class="form-control me-2"
-                id="search-btn"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="currentColor"
-                class="bi bi-search mt-2"
-                id="search-icon"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              <div class="col my-2 d-flex">
+                <input
+                  class="form-control me-2"
+                  id="search-btn"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
                 />
-                f
-              </svg>
-            </div>
-            <div class="col my-1">
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      id="nav-login active"
-                      aria-current="page"
-                      href="#"
-                      >Login</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      id="nav-reg active"
-                      aria-current="page"
-                      href="#"
-                      >Register</a
-                    >
-                  </li>
-                </ul>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-search mt-2"
+                  id="search-icon"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  />
+                  f
+                </svg>
+              </div>
+              <div class="col my-1">
+                <div
+                  class="collapse navbar-collapse"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active"
+                        id="nav-login active"
+                        aria-current="page"
+                        href="#"
+                        >Login</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active"
+                        id="nav-reg active"
+                        aria-current="page"
+                        href="#"
+                        >Register</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <!-- Nav bars -->
-    <div class="container-fluid bg-info">
-      <div class="container">
-        <div class="btn-group py-2">
-          <a href="#" class="btn btn-info text-white" aria-current="page"
-            >Shows</a
-          >
-          <a href="#" class="btn btn-info text-white">People </a>
-          <a href="#" class="btn btn-info text-white">Network </a>
+      <!-- Nav bars -->
+      <div class="container-fluid bg-info">
+        <div class="container">
+          <div class="btn-group py-2">
+            <a href="#" class="btn btn-info text-white" aria-current="page"
+              >Shows</a
+            >
+            <a href="#" class="btn btn-info text-white">People </a>
+            <a href="#" class="btn btn-info text-white">Network </a>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
 
     <!--   Kinolar ruyxati -->
-    <div class="container py-3">
+    <div class="container py-3 d-none">
       <nav aria-label="breadcrumb ">
         <ol class="breadcrumb bg-body-secondary p-3 rounded">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -233,6 +238,48 @@
           <button type="button" class="btn btn-outline-success my-3 mx-1">
             More Show >
           </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kino haqida -->
+    <div class="kino-haqida-container">
+      <div class="kino-haqida-container-img">
+        <img
+          width="100%"
+          src="https://static.tvmaze.com/uploads/images/medium_portrait/424/1061886.jpg"
+          alt=""
+        />
+        <button class="kino-haqida-container-img-btn">Watch</button>
+      </div>
+      <div class="kino-haqida-container-description">
+        <div class="kino-haqida-container-description-title">FBI</div>
+        <div class="kino-haqida-container-description-genre">
+          <span>Crime</span>
+          <span>Drama</span>
+          <span>Action</span>
+        </div>
+        <div class="kino-haqida-container-description-p">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex aliquam
+          obcaecati sapiente architecto soluta laudantium molestias quas laborum
+          omnis nostrum, magni animi, repellat voluptas, quibusdam neque!
+          Debitis, provident blanditiis? Temporibus. Lorem, ipsum dolor sit amet
+          consectetur adipisicing elit. Aliquid itaque velit quae aut totam et
+          harum eius non. Qui debitis deleniti dignissimos odio, dolores quae ex
+          obcaecati aliquid amet quo. Soluta, earum odio. Nostrum ex animi
+          aspernatur maiores alias laborum quas commodi, similique sint?
+          Provident, dolorem nemo! Iure amet fugiat obcaecati facere atque,
+          soluta reprehenderit, labore sit inventore voluptatum quis. Debitis
+          voluptatibus earum quas nihil, quae minus veniam veritatis unde
+          molestias deserunt ipsam. Eum accusantium minus officiis expedita
+          praesentium ut assumenda modi facilis dolores consectetur aspernatur,
+          porro at sint eos? Et labore iste recusandae! Aperiam tempore corrupti
+          eum hic deleniti mollitia repellat necessitatibus magnam incidunt
+          facilis, harum odio! Dicta accusantium possimus modi dolorem veritatis
+          voluptatem maxime ratione voluptatum eius minima? Omnis atque velit
+          error fugiat ratione, iste labore ipsa voluptate dignissimos tenetur
+          saepe assumenda fuga nulla, voluptates natus? Aliquam ducimus ad
+          aliquid incidunt eos asperiores porro animi quis labore illo?
         </div>
       </div>
     </div>

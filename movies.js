@@ -68,11 +68,9 @@ width="575"
 height="528"
 />`;
 
-
-let function makeBener(name) {
+function makeBener(name) {
   name = move.name;
   console.log(name);
-  
 }
 
 // const movies = [

@@ -89,7 +89,20 @@ function makeBener(name, img, title) {
   </div>
 </div>`;
 }
-
+get("search-icon").onclick = () => {
+  const searchInput = search.value;
+  console.log("searchInput: ", searchInput);
+  fetch(`http://api.tvmaze.com/search/shows?q=${searchInput}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // data  = [score ={}, shows = {}]
+      const shows = [];
+      for (const item of data) {
+        shows.push(item.show);
+      }
+      makeBaner(shows);
+    });
+};
 // const movies = [
 //   {
 //     imgUrl:

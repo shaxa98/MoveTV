@@ -101,6 +101,7 @@ get("search-icon").onclick = () => {
         shows.push(item.show);
       }
       makeBaner(shows);
+      samthing;
     });
 };
 // const movies = [

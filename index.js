@@ -102,6 +102,7 @@ const makeBaner = (movies) => {
     const movieHTML = movieCard(movie.image.medium, movie.name, "");
     moviesHTML += movieHTML;
   }
+  console.log(moviesContainer);
   moviesContainer.innerHTML = moviesHTML;
 };
 

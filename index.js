@@ -103,36 +103,18 @@ const movieCard = (imgUrl, title, id, description) => {
 };
 const erorHTML = `<h1 class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"> Not Found</h1>`;
 
-function cardClick(id) {
-  let yoftem = {};
-  for (const kino of movies) {
-    if (kino.id === id) {
-      yoftem = kino;
-      mainBanner.classList.add("d-none");
-      aboutFilim.classList.remove("d-none");
-    }
-  }
-
-  console.log("yoftem: ", yoftem);
-
-  console.log("cardClick", id);
-}
-
 const makeBaner = () => {
   let moviesHTML = "";
   for (const movie of movies) {
     const movieHTML = movieCard(movie.image.medium, movie.name, movie.id, "");
     moviesHTML += movieHTML;
   }
-
   moviesContainer.innerHTML = moviesHTML;
 };
 
 fetch("http://api.tvmaze.com/shows")
   .then((response) => response.json())
   .then((data) => {
-    // data = [shows = {}]
-    //makeBaner(data);
     movies = data;
     makeBaner();
   });
@@ -152,3 +134,41 @@ get("search-icon").onclick = () => {
       makeBaner();
     });
 };
+function makeMove(img, name, summary, genres1, genres2, genres3) {
+  return ` <div class="kino-haqida-container-img">
+  <img
+    width="100%"
+    src=${img}
+    alt=""
+  />
+  <button class="kino-haqida-container-img-btn">Watch</button>
+</div>
+<div class="kino-haqida-container-description">
+  <div class="kino-haqida-container-description-title">${name}</div>
+  <div class="kino-haqida-container-description-genre">
+    <span>${genres1}</span>
+    <span>${genres2}</span>
+    <span>${genres3}</span>
+  </div>
+  <div class="kino-haqida-container-description-p">${summary}</div>
+</div>`;
+}
+function cardClick(id) {
+  let yoftem = {};
+  for (const kino of movies) {
+    if (kino.id === id) {
+      yoftem = kino;
+      mainBanner.classList.add("d-none");
+      aboutFilim.classList.remove("d-none");
+    }
+  }
+  const makeMoveHTML = makeMove(
+    yoftem.image.medium,
+    yoftem.name,
+    yoftem.summary,
+    yoftem.genres[0],
+    yoftem.genres[1],
+    yoftem.genres[2]
+  );
+  aboutFilim.innerHTML = makeMoveHTML;
+}

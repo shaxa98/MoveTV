@@ -19,6 +19,7 @@ const loginUnsucsesBaner = document.getElementById("login-unsuccess-bunner");
 const mainBanner = document.getElementById("main");
 const moviesContainer = document.getElementById("movies-container");
 const search = document.getElementById("search-btn");
+const aboutFilim = document.getElementById("kino-haqida-container");
 
 get("navbar-brand").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -27,7 +28,7 @@ get("navbar-brand").onclick = () => {
   loginUnsucsesBaner.classList.add("d-none");
   registerForm.classList.add("d-none");
   mainBanner.classList.remove("d-none");
-  // makeBaner();
+  aboutFilim.classList.add("d-none");
 };
 get("clickAfterLoginSuccessBtn").onclick = () => {
   registerForm.classList.add("d-none");
@@ -35,6 +36,7 @@ get("clickAfterLoginSuccessBtn").onclick = () => {
   loginForm.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
+  aboutFilim.classList.add("d-none");
 
   mainBanner.classList.remove("d-none");
 };
@@ -45,6 +47,7 @@ get("nav-login active").onclick = () => {
   registerForm.classList.add("d-none");
   mainBanner.classList.add("d-none");
   loginForm.classList.remove("d-none");
+  aboutFilim.classList.add("d-none");
 };
 get("nav-reg active").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -53,6 +56,7 @@ get("nav-reg active").onclick = () => {
   loginUnsucsesBaner.classList.add("d-none");
   mainBanner.classList.add("d-none");
   registerForm.classList.remove("d-none");
+  aboutFilim.classList.add("d-none");
 };
 
 get("register-submit").onclick = () => {
@@ -70,6 +74,7 @@ get("register-submit").onclick = () => {
 get("clickToLoginBtn").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.remove("d-none");
+  aboutFilim.classList.add("d-none");
 };
 
 get("login-submit").onclick = () => {
@@ -100,23 +105,22 @@ const erorHTML = `<h1 class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font
 
 function cardClick(id) {
   let yoftem = {};
-
   for (const kino of movies) {
-    //console.log(kino.id);
     if (kino.id === id) {
       yoftem = kino;
+      mainBanner.classList.add("d-none");
+      aboutFilim.classList.remove("d-none");
     }
   }
+
   console.log("yoftem: ", yoftem);
 
   console.log("cardClick", id);
-  //console.log(movies);
 }
 
 const makeBaner = () => {
   let moviesHTML = "";
   for (const movie of movies) {
-    //console.log(movie);
     const movieHTML = movieCard(movie.image.medium, movie.name, movie.id, "");
     moviesHTML += movieHTML;
   }

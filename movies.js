@@ -68,29 +68,6 @@ width="575"
 height="528"
 />`;
 
-function makeBener(name, img, title) {
-  return ` <div class="kino-haqida-container">
-  <div class="kino-haqida-container-img">
-    <img
-      width="100%"
-      src="${img}"
-      alt=""
-    />
-    <button class="kino-haqida-container-img-btn">Watch</button>
-  </div>
-  <div class="kino-haqida-container-description">
-    <div class="kino-haqida-container-description-title">${name}</div>
-    <div class="kino-haqida-container-description-genre">
-      <span>Crime</span>
-      <span>Drama</span>
-      <span>Action</span>
-    </div>
-    <div class="kino-haqida-container-description-p">${title}</div>
-  </div>
-</div>`;
-}
-
-
 // const movies = [
 //   {
 //     imgUrl:

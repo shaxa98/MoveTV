@@ -27,6 +27,15 @@ get("navbar-brand").onclick = () => {
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
   registerForm.classList.add("d-none");
+  aboutFilim.classList.add("d-none");
+  mainBanner.classList.remove("d-none");
+};
+get("homeBtn").onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  registerForm.classList.add("d-none");
   mainBanner.classList.remove("d-none");
   aboutFilim.classList.add("d-none");
 };
@@ -36,9 +45,8 @@ get("clickAfterLoginSuccessBtn").onclick = () => {
   loginForm.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
   loginUnsucsesBaner.classList.add("d-none");
-  aboutFilim.classList.add("d-none");
-
   mainBanner.classList.remove("d-none");
+  aboutFilim.classList.add("d-none");
 };
 get("nav-login active").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -50,6 +58,15 @@ get("nav-login active").onclick = () => {
   aboutFilim.classList.add("d-none");
 };
 get("nav-reg active").onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  mainBanner.classList.add("d-none");
+  registerForm.classList.remove("d-none");
+  aboutFilim.classList.add("d-none");
+};
+get("Reg2").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.add("d-none");
   loginSucsesBaner.classList.add("d-none");
@@ -134,7 +151,7 @@ get("search-icon").onclick = () => {
       makeBaner();
     });
 };
-function makeMove(img, name, summary, genres1, genres2, genres3) {
+function makeMove(img, name, summary, genres1, genres2, genres3, image) {
   return ` <div class="kino-haqida-container-img">
   <img
     width="100%"
@@ -151,7 +168,12 @@ function makeMove(img, name, summary, genres1, genres2, genres3) {
     <span>${genres3}</span>
   </div>
   <div class="kino-haqida-container-description-p">${summary}</div>
-</div>`;
+</div>
+<style>
+.kino-haqida-container {
+  background-image: url("${image}");
+}
+</style>`;
 }
 function cardClick(id) {
   let yoftem = {};
@@ -168,7 +190,8 @@ function cardClick(id) {
     yoftem.summary,
     yoftem.genres[0],
     yoftem.genres[1],
-    yoftem.genres[2]
+    yoftem.genres[2],
+    yoftem.image.original
   );
   aboutFilim.innerHTML = makeMoveHTML;
 }

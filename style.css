@@ -24,17 +24,16 @@ header {
   height: 13%;
 }
 
-.kino-haqida-container {
+ .kino-haqida-container {
   height: 90%;
   padding: 20px 180px;
   display: flex;
-  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2lub3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(10px);
-}
+} */
 
 .kino-haqida-container-img {
   width: 30%;

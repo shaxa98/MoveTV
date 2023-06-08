@@ -129,7 +129,7 @@ const makeBaner = () => {
   moviesContainer.innerHTML = moviesHTML;
 };
 
-fetch("http://api.tvmaze.com/shows")
+fetch("https://api.tvmaze.com/shows")
   .then((response) => response.json())
   .then((data) => {
     movies = data;
@@ -139,7 +139,7 @@ fetch("http://api.tvmaze.com/shows")
 get("search-icon").onclick = () => {
   const searchInput = search.value;
   console.log("searchInput: ", searchInput);
-  fetch(`http://api.tvmaze.com/search/shows?q=${searchInput}`)
+  fetch(`https://api.tvmaze.com/search/shows?q=${searchInput}`)
     .then((response) => response.json())
     .then((data) => {
       // data  = [score ={}, shows = {}]

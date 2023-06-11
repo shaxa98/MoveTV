@@ -20,6 +20,7 @@ const mainBanner = document.getElementById("main");
 const moviesContainer = document.getElementById("movies-container");
 const search = document.getElementById("search-btn");
 const aboutFilim = document.getElementById("kino-haqida-container");
+const py3 = document.getElementById("breadcrumb-item");
 
 get("navbar-brand").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -30,15 +31,15 @@ get("navbar-brand").onclick = () => {
   aboutFilim.classList.add("d-none");
   mainBanner.classList.remove("d-none");
 };
-get("homeBtn").onclick = () => {
-  registerSuccessBanner.classList.add("d-none");
-  loginForm.classList.add("d-none");
-  loginSucsesBaner.classList.add("d-none");
-  loginUnsucsesBaner.classList.add("d-none");
-  registerForm.classList.add("d-none");
-  mainBanner.classList.remove("d-none");
-  aboutFilim.classList.add("d-none");
-};
+// get("homeBtn").onclick = () => {
+//   registerSuccessBanner.classList.add("d-none");
+//   loginForm.classList.add("d-none");
+//   loginSucsesBaner.classList.add("d-none");
+//   loginUnsucsesBaner.classList.add("d-none");
+//   registerForm.classList.add("d-none");
+//   mainBanner.classList.remove("d-none");
+//   aboutFilim.classList.add("d-none");
+// };
 get("clickAfterLoginSuccessBtn").onclick = () => {
   registerForm.classList.add("d-none");
   registerSuccessBanner.classList.add("d-none");
@@ -188,7 +189,12 @@ function cardClick(id) {
 }
 
 function makeBtn(name) {
-  return `<a href="#" class="btn btn-info text-white">${name} </a>`;
+  return `<a href="#" id="homeBtn">Home /</a>
+  <a href="#" id="homeBtn">${name}</a>`;
 }
 
 console.log(makeBtn("shaxzod"));
+console.log(py3);
+
+const makeBtnHTML = makeBtn("");
+py3.innerHTML = makeBtnHTML;

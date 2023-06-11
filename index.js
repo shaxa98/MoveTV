@@ -66,15 +66,6 @@ get("nav-reg active").onclick = () => {
   registerForm.classList.remove("d-none");
   aboutFilim.classList.add("d-none");
 };
-get("Reg2").onclick = () => {
-  registerSuccessBanner.classList.add("d-none");
-  loginForm.classList.add("d-none");
-  loginSucsesBaner.classList.add("d-none");
-  loginUnsucsesBaner.classList.add("d-none");
-  mainBanner.classList.add("d-none");
-  registerForm.classList.remove("d-none");
-  aboutFilim.classList.add("d-none");
-};
 
 get("register-submit").onclick = () => {
   const user = {
@@ -195,3 +186,9 @@ function cardClick(id) {
   );
   aboutFilim.innerHTML = makeMoveHTML;
 }
+
+function makeBtn(name) {
+  return `<a href="#" class="btn btn-info text-white">${name} </a>`;
+}
+
+console.log(makeBtn("shaxzod"));

@@ -3,6 +3,9 @@ let movies = [];
 const get = (elId) => {
   return document.getElementById(elId);
 };
+const cName = (elClass) => {
+  return document.getElementsByClassName(elClass);
+};
 
 const registerForm = document.getElementById("regisration-form");
 const registerSuccessBanner = document.getElementById(
@@ -189,12 +192,9 @@ function cardClick(id) {
 }
 
 function makeBtn(name) {
-  return `<a href="#" id="homeBtn">Home /</a>
+  const makeBtnHTML = `<a href="#" id="homeBtn">Home /</a>
   <a href="#" id="homeBtn">${name}</a>`;
+  py3.innerHTML = makeBtnHTML;
 }
-
-console.log(makeBtn("shaxzod"));
+// console.log(makeBtn("salom"));
 console.log(py3);
-
-const makeBtnHTML = makeBtn("");
-py3.innerHTML = makeBtnHTML;

@@ -3,9 +3,6 @@ let movies = [];
 const get = (elId) => {
   return document.getElementById(elId);
 };
-const cName = (elClass) => {
-  return document.getElementsByClassName(elClass);
-};
 
 const registerForm = document.getElementById("regisration-form");
 const registerSuccessBanner = document.getElementById(
@@ -197,4 +194,4 @@ function makeBtn(name) {
   py3.innerHTML = makeBtnHTML;
 }
 // console.log(makeBtn("salom"));
-console.log(py3);
+console.log(person);

@@ -1,31 +1,4 @@
-const oneperson = {
-  id: 1,
-  url: "https://www.tvmaze.com/people/1/mike-vogel",
-  name: "Mike Vogel",
-  country: {
-    name: "United States",
-    code: "US",
-    timezone: "America/New_York",
-  },
-  birthday: "1979-07-17",
-  deathday: null,
-  gender: "Male",
-  image: {
-    medium:
-      "https://static.tvmaze.com/uploads/images/medium_portrait/0/1815.jpg",
-    original:
-      "https://static.tvmaze.com/uploads/images/original_untouched/0/1815.jpg",
-  },
-  updated: 1672996558,
-  _links: {
-    self: {
-      href: "https://api.tvmaze.com/people/1",
-    },
-  },
-};
-console.log(oneperson.name);
-
-const person = [
+const people = [
   {
     id: 1,
     url: "https://www.tvmaze.com/people/1/mike-vogel",
@@ -352,3 +325,26 @@ const person = [
     },
   },
 ];
+const personKard = (img, Pname) => {
+  return ` <div class="card">
+    <img
+      src="${img}"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <h5 class="name">${Pname}</h5>
+      
+    </div>
+  </div>`;
+};
+let personCard = document.getElementById("people-container");
+let peoples = [];
+const personsHTML = "";
+for (const peoples of people) {
+  const personHTML = personKard(peoples.image.medium, peoples.name);
+  //personsHTML += personHTML;
+
+  personCard.innerHTML = personHTML;
+  console.log(personHTML);
+}

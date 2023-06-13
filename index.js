@@ -193,5 +193,3 @@ function makeBtn(name) {
   <a href="#" id="homeBtn">${name}</a>`;
   py3.innerHTML = makeBtnHTML;
 }
-// console.log(makeBtn("salom"));
-console.log(person);

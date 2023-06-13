@@ -338,13 +338,12 @@ const personKard = (img, Pname) => {
     </div>
   </div>`;
 };
-let personCard = document.getElementById("people-container");
+let personContainer = document.getElementById("people-container");
 let peoples = [];
-const personsHTML = "";
+let personsHTML = "";
 for (const peoples of people) {
   const personHTML = personKard(peoples.image.medium, peoples.name);
-  //personsHTML += personHTML;
-
-  personCard.innerHTML = personHTML;
-  console.log(personHTML);
+  personsHTML += personHTML;
 }
+//personContainer.innerHTML = personsHTML;
+console.log(personsHTML);

@@ -118,7 +118,7 @@ const makeBaner = () => {
     const movieHTML = movieCard(movie.image.medium, movie.name, movie.id, "");
     moviesHTML += movieHTML;
   }
-  moviesContainer.innerHTML = moviesHTML;
+  // moviesContainer.innerHTML = moviesHTML;
 };
 
 fetch("https://api.tvmaze.com/shows")

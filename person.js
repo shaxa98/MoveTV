@@ -1,4 +1,4 @@
-const people = [
+let people = [
   {
     id: 1,
     url: "https://www.tvmaze.com/people/1/mike-vogel",
@@ -325,6 +325,17 @@ const people = [
     },
   },
 ];
+//let people = "";
+
+fetch("https://api.tvmaze.com/people")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    people = data;
+    //personsHTML = data;
+    //makePersonContainer();
+  });
+
 const personKard = (img, Pname) => {
   return ` <div class="card">
     <img
@@ -338,15 +349,6 @@ const personKard = (img, Pname) => {
     </div>
   </div>`;
 };
-// let personContainer = document.getElementById("people-container");
-// let peoples = [];
-// let personsHTML = "";
-// for (const peoples of people) {
-//   const personHTML = personKard(peoples.image.medium, peoples.name);
-//   personsHTML += personHTML;
-// }
-// personContainer.innerHTML = personsHTML;
-// console.log(personsHTML);
 
 function makePersonContainer() {
   let personContainer = document.getElementById("people-container");
@@ -359,27 +361,4 @@ function makePersonContainer() {
   console.log(personsHTML);
 }
 
-//makePersonContainer();
-fetch("https://api.tvmaze.com/people") {
-  method: "GET"
-  headers: {
-    "Content-Type": "application/json"
-    Authorization: "Bearer YOUR_API_KEY"
-  }
-})
-  .then((response) => response.json())
-  .then((data) => {
-    // Process the returned data
-    console.log(data);
-  })
-  .catch((error) => {
-    // Handle any errors
-    console.error("Error:", error);
-  });
-
-// fetch("https://api.tvmaze.com/people")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     personsHTML = data;
-//     makePersonContainer();
-//   });
+makePersonContainer();

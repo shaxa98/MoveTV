@@ -331,7 +331,7 @@ fetch("https://api.tvmaze.com/people")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    people = data;
+    people += data;
     //personsHTML = data;
     //makePersonContainer();
   });
@@ -358,7 +358,7 @@ function makePersonContainer() {
     personsHTML += personHTML;
   }
   personContainer.innerHTML = personsHTML;
-  console.log(personsHTML);
+  //console.log(personsHTML);
 }
 
 makePersonContainer();

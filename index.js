@@ -21,6 +21,7 @@ const moviesContainer = document.getElementById("movies-container");
 const search = document.getElementById("search-btn");
 const aboutFilim = document.getElementById("kino-haqida-container");
 const py3 = document.getElementById("breadcrumb-item");
+const tabTopic = document.getElementById("tabs-topic");
 
 get("navbar-brand").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -31,15 +32,15 @@ get("navbar-brand").onclick = () => {
   aboutFilim.classList.add("d-none");
   mainBanner.classList.remove("d-none");
 };
-// get("homeBtn").onclick = () => {
-//   registerSuccessBanner.classList.add("d-none");
-//   loginForm.classList.add("d-none");
-//   loginSucsesBaner.classList.add("d-none");
-//   loginUnsucsesBaner.classList.add("d-none");
-//   registerForm.classList.add("d-none");
-//   mainBanner.classList.remove("d-none");
-//   aboutFilim.classList.add("d-none");
-// };
+get("homeBtn").onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  registerForm.classList.add("d-none");
+  mainBanner.classList.remove("d-none");
+  aboutFilim.classList.add("d-none");
+};
 get("clickAfterLoginSuccessBtn").onclick = () => {
   registerForm.classList.add("d-none");
   registerSuccessBanner.classList.add("d-none");
@@ -98,36 +99,7 @@ get("login-submit").onclick = () => {
     loginUnsucsesBaner.classList.remove("d-none");
   }
 };
-
-const movieCard = (imgUrl, title, id, description) => {
-  return `<div class="card" onclick="cardClick(${id})">
-  <img
-  src="${imgUrl}"
-  class="card-img-top"
-  />
-  <div class="card-body">
-  <h5 class="card-title">${title}</h5>
-  <p class="card-text">${description}</p>
-  </div> </div>`;
-};
 const erorHTML = `<h1 class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"> Not Found</h1>`;
-
-const makeBaner = () => {
-  let moviesHTML = "";
-  for (const movie of movies) {
-    const movieHTML = movieCard(movie.image.medium, movie.name, movie.id, "");
-    moviesHTML += movieHTML;
-  }
-  // moviesContainer.innerHTML = moviesHTML;
-};
-
-fetch("https://api.tvmaze.com/shows")
-  .then((response) => response.json())
-  .then((data) => {
-    movies = data;
-    makeBaner();
-  });
-
 get("search-icon").onclick = () => {
   const searchInput = search.value;
   console.log("searchInput: ", searchInput);
@@ -143,6 +115,58 @@ get("search-icon").onclick = () => {
       makeBaner();
     });
 };
+
+function makeBtn(name) {
+  const makeBtnHTML = `<a href="#" id="homeBtn">Home /</a>
+  <a href="#" id="homeBtn">${name}</a>`;
+  const tabsHTML = `<h1>${name}</h1>`;
+  tabTopic.innerHTML = tabsHTML;
+  py3.innerHTML = makeBtnHTML;
+}
+
+// kinoya kategoriyesh
+
+const baner = `<img
+style="
+  display: block;
+  -webkit-user-select: none;
+  margin: auto;
+  cursor: zoom-in;
+  background-color: hsl(0, 0%, 90%);
+  transition: background-color 300ms;
+"
+src="https://raw.githubusercontent.com/Bekhzod96/TvMazeApp/master/public/images/result_2.png"
+width="575"
+height="528"
+/>`;
+
+const movieCard = (imgUrl, title, id, description) => {
+  return `<div class="card" onclick="cardClick(${id})">
+  <img
+  src="${imgUrl}"
+  class="card-img-top"
+  />
+  <div class="card-body">
+  <h5 class="card-title">${title}</h5>
+  <p class="card-text">${description}</p>
+  </div> </div>`;
+};
+
+const makeBaner = () => {
+  let moviesHTML = "";
+  for (const movie of movies) {
+    const movieHTML = movieCard(movie.image?.medium, movie.name, movie.id);
+    moviesHTML += movieHTML;
+  }
+  moviesContainer.innerHTML = moviesHTML;
+};
+fetch("https://api.tvmaze.com/shows")
+  .then((response) => response.json())
+  .then((data) => {
+    movies = data;
+    makeBaner();
+  });
+
 function makeMove(img, name, summary, genres1, genres2, genres3, image) {
   return ` <div class="kino-haqida-container-img">
   <img
@@ -186,10 +210,4 @@ function cardClick(id) {
     yoftem.image.original
   );
   aboutFilim.innerHTML = makeMoveHTML;
-}
-
-function makeBtn(name) {
-  const makeBtnHTML = `<a href="#" id="homeBtn">Home /</a>
-  <a href="#" id="homeBtn">${name}</a>`;
-  py3.innerHTML = makeBtnHTML;
 }

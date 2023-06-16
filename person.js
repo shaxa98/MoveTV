@@ -1,5 +1,4 @@
 let people = [];
-
 const personKard = (img, Pname) => {
   return ` <div class="card d-none">
     <img
@@ -30,7 +29,6 @@ function makePersonContainer() {
 fetch("https://api.tvmaze.com/people")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     people = data;
     setTimeout(makePersonContainer, 1500);
   });

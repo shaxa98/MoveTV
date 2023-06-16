@@ -1,6 +1,6 @@
 let people = [];
 const personKard = (img, Pname) => {
-  return ` <div class="card d-none">
+  return ` <div class="card">
     <img
       src="${img}"
       class="card-img-top"
@@ -12,9 +12,8 @@ const personKard = (img, Pname) => {
     </div>
   </div>`;
 };
-
+let personContainer = document.getElementById("people-container");
 function makePersonContainer() {
-  let personContainer = document.getElementById("people-container");
   let personsHTML = "";
   for (const peoples of people) {
     const img =
@@ -32,3 +31,9 @@ fetch("https://api.tvmaze.com/people")
     people = data;
     setTimeout(makePersonContainer, 1500);
   });
+
+get("TabPeople").onclick = () => {
+  mainBanner.classList.add("d-none");
+  personContainer.classList.remove("d-none");
+  makeBtn("People");
+};

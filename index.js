@@ -16,7 +16,7 @@ const loginEmail = document.getElementById("login-email");
 const loginPassword = document.getElementById("login-password");
 const loginSucsesBaner = document.getElementById("login-success-bunner");
 const loginUnsucsesBaner = document.getElementById("login-unsuccess-bunner");
-const mainBanner = document.getElementById("main");
+const mainBanner = document.getElementById("movies-container");
 const moviesContainer = document.getElementById("movies-container");
 const search = document.getElementById("search-btn");
 const aboutFilim = document.getElementById("kino-haqida-container");
@@ -31,6 +31,7 @@ get("navbar-brand").onclick = () => {
   registerForm.classList.add("d-none");
   aboutFilim.classList.add("d-none");
   mainBanner.classList.remove("d-none");
+  personContainer.classList.add("d-none");
 };
 get("homeBtn").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -40,6 +41,18 @@ get("homeBtn").onclick = () => {
   registerForm.classList.add("d-none");
   mainBanner.classList.remove("d-none");
   aboutFilim.classList.add("d-none");
+  personContainer.classList.add("d-none");
+};
+get("TabShows").onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  registerForm.classList.add("d-none");
+  mainBanner.classList.remove("d-none");
+  aboutFilim.classList.add("d-none");
+  personContainer.classList.add("d-none");
+  makeBtn("Shows");
 };
 get("clickAfterLoginSuccessBtn").onclick = () => {
   registerForm.classList.add("d-none");
@@ -49,6 +62,7 @@ get("clickAfterLoginSuccessBtn").onclick = () => {
   loginUnsucsesBaner.classList.add("d-none");
   mainBanner.classList.remove("d-none");
   aboutFilim.classList.add("d-none");
+  personContainer.classList.add("d-none");
 };
 get("nav-login active").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -58,6 +72,7 @@ get("nav-login active").onclick = () => {
   mainBanner.classList.add("d-none");
   loginForm.classList.remove("d-none");
   aboutFilim.classList.add("d-none");
+  personContainer.classList.add("d-none");
 };
 get("nav-reg active").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
@@ -67,6 +82,7 @@ get("nav-reg active").onclick = () => {
   mainBanner.classList.add("d-none");
   registerForm.classList.remove("d-none");
   aboutFilim.classList.add("d-none");
+  personContainer.classList.add("d-none");
 };
 
 get("register-submit").onclick = () => {
@@ -85,6 +101,7 @@ get("clickToLoginBtn").onclick = () => {
   registerSuccessBanner.classList.add("d-none");
   loginForm.classList.remove("d-none");
   aboutFilim.classList.add("d-none");
+  personContainer.classList.add("d-none");
 };
 
 get("login-submit").onclick = () => {
@@ -118,7 +135,7 @@ get("search-icon").onclick = () => {
 
 function makeBtn(name) {
   const makeBtnHTML = `<a href="#" id="homeBtn">Home /</a>
-  <a href="#" id="homeBtn">${name}</a>`;
+  <a href="#" id="${name}">${name}</a>`;
   const tabsHTML = `<h1>${name}</h1>`;
   tabTopic.innerHTML = tabsHTML;
   py3.innerHTML = makeBtnHTML;

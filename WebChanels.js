@@ -28,12 +28,13 @@ function makeChanelContainer() {
 fetch("https://api.tvmaze.com/people")
   .then((response) => response.json())
   .then((data) => {
-    people = data;
+    Chanel = data;
     setTimeout(makeChanelContainer, 1500);
   });
 
 get("TabWebchanels").onclick = () => {
   mainBanner.classList.add("d-none");
-  personContainer.classList.remove("d-none");
+  personContainer.classList.add("d-none");
+  ChanelContainer.classList.remove("d-none");
   makeBtn("Web Chanels");
 };

@@ -22,18 +22,19 @@ function makeNetworkContainer() {
     const networkHTML = networkCard(img, networks.name);
     networksHTML += networkHTML;
   }
-  personContainer.innerHTML = personsHTML;
+  networkContainer.innerHTML = networksHTML;
 }
 
 fetch("https://api.tvmaze.com/people")
   .then((response) => response.json())
   .then((data) => {
-    people = data;
+    network = data;
     setTimeout(makeNetworkContainer, 1500);
   });
 
 get("TAbNetwork").onclick = () => {
   mainBanner.classList.add("d-none");
-  personContainer.classList.remove("d-none");
+  personContainer.classList.add("d-none");
+  networkContainer.classList.remove("d-none");
   makeBtn("Network");
 };

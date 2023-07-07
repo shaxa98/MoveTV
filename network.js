@@ -12,15 +12,15 @@ const networkCard = (img, Pname) => {
     </div>
   </div>`;
 };
-let networkContainer = document.getElementById("people-container");
+let networkContainer = document.getElementById("network-container");
 function makeNetworkContainer() {
-  let personsHTML = "";
-  for (const peoples of network) {
+  let networksHTML = "";
+  for (const networks of network) {
     const img =
-      peoples.image?.medium ||
+      networks.image?.medium ||
       "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg";
-    const personHTML = personKard(img, peoples.name);
-    personsHTML += personHTML;
+    const networkHTML = networkCard(img, networks.name);
+    networksHTML += networkHTML;
   }
   personContainer.innerHTML = personsHTML;
 }
@@ -29,11 +29,11 @@ fetch("https://api.tvmaze.com/people")
   .then((response) => response.json())
   .then((data) => {
     people = data;
-    setTimeout(makePersonContainer, 1500);
+    setTimeout(makeNetworkContainer, 1500);
   });
 
-get("TabPeople").onclick = () => {
+get("TAbNetwork").onclick = () => {
   mainBanner.classList.add("d-none");
-  //personContainer.classList.remove("d-none");
-  makeBtn("People");
+  personContainer.classList.remove("d-none");
+  makeBtn("Network");
 };

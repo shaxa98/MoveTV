@@ -1,5 +1,5 @@
-let people = [];
-const personKard = (img, Pname) => {
+let Chanel = [];
+const ChanelCard = (img, Pname) => {
   return ` <div class="card">
     <img
       src="${img}"
@@ -12,28 +12,28 @@ const personKard = (img, Pname) => {
     </div>
   </div>`;
 };
-let personContainer = document.getElementById("people-container");
-function makePersonContainer() {
-  let personsHTML = "";
-  for (const peoples of people) {
+let ChanelContainer = document.getElementById("Chanel-container");
+function makeChanelContainer() {
+  let ChanelsHTML = "";
+  for (const Chanels of Chanel) {
     const img =
-      peoples.image?.medium ||
+      Chanels.image?.medium ||
       "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg";
-    const personHTML = personKard(img, peoples.name);
-    personsHTML += personHTML;
+    const ChanelHTML = ChanelCard(img, Chanels.name);
+    ChanelsHTML += ChanelHTML;
   }
-  personContainer.innerHTML = personsHTML;
+  ChanelContainer.innerHTML = ChanelsHTML;
 }
 
 fetch("https://api.tvmaze.com/people")
   .then((response) => response.json())
   .then((data) => {
     people = data;
-    setTimeout(makePersonContainer, 1500);
+    setTimeout(makeChanelContainer, 1500);
   });
 
-get("TabPeople").onclick = () => {
+get("TabWebchanels").onclick = () => {
   mainBanner.classList.add("d-none");
   personContainer.classList.remove("d-none");
-  makeBtn("People");
+  makeBtn("Web Chanels");
 };

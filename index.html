@@ -93,8 +93,8 @@
           <div class="btn-group py-2">
             <a href="#" class="btn btn-info text-white" aria-current="page"  id="TabShows">Shows</a>
             <a href="#" class="btn btn-info text-white"  id="TabPeople">People </a>
-            <a href="#" class="btn btn-info text-white" onclick="makeBtn('Network')" id="TAbNetwork">Network </a>
-            <a href="#" class="btn btn-info text-white" onclick="makeBtn('Web Chanels')" id="TabWebchanels">Web Chanels </a>
+            <a href="#" class="btn btn-info text-white"  id="TAbNetwork">Network </a>
+            <a href="#" class="btn btn-info text-white"  id="TabWebchanels">Web Chanels </a>
             <a href="#" class="btn btn-info text-white" onclick="makeBtn('Articles')" id="TabArticles">Articles </a>
             <a href="#" class="btn btn-info text-white" onclick="makeBtn('Countdown')" id="TAbCountdown">Countdown </a>
             <a href="#" class="btn btn-info text-white" onclick="makeBtn('Forums')" id="TabForums">Forums </a>
@@ -242,6 +242,20 @@
               <span class="loader"></span>
             </div>
           </div>
+          <!-- Kategoriya of network-->
+          <div class="d-flex flex-wrap d-none" id="network-container">
+            
+            <div class="loder">
+              <span class="loader"></span>
+            </div>
+          </div>
+           <!-- Kategoriya of Webchanel-->
+           <div class="d-flex flex-wrap d-none" id="Chanel-container">
+            
+            <div class="loder">
+              <span class="loader"></span>
+            </div>
+          </div>
 
 
           <button type="button" class="btn btn-outline-success my-3 mx-1">
@@ -275,4 +289,6 @@
     <script src="./index.js"></script>
     <script src="person.js"> </script>
     <script src="shows.js"></script>
+    <script src="network.js"></script>
+    <script src="WebChanels.js"></script>
 </html>

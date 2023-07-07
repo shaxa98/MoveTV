@@ -85,3 +85,15 @@
 //   );
 //   aboutFilim.innerHTML = makeMoveHTML;
 // }
+
+// get("TabShows").onclick = () => {
+//     registerSuccessBanner.classList.add("d-none");
+//     loginForm.classList.add("d-none");
+//     loginSucsesBaner.classList.add("d-none");
+//     loginUnsucsesBaner.classList.add("d-none");
+//     registerForm.classList.add("d-none");
+//     mainBanner.classList.remove("d-none");
+//     aboutFilim.classList.add("d-none");
+//     personContainer.classList.add("d-none");
+//     makeBtn("Shows");
+//   };

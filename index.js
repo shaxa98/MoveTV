@@ -43,17 +43,7 @@ get("homeBtn").onclick = () => {
   aboutFilim.classList.add("d-none");
   personContainer.classList.add("d-none");
 };
-get("TabShows").onclick = () => {
-  registerSuccessBanner.classList.add("d-none");
-  loginForm.classList.add("d-none");
-  loginSucsesBaner.classList.add("d-none");
-  loginUnsucsesBaner.classList.add("d-none");
-  registerForm.classList.add("d-none");
-  mainBanner.classList.remove("d-none");
-  aboutFilim.classList.add("d-none");
-  personContainer.classList.add("d-none");
-  makeBtn("Shows");
-};
+
 get("clickAfterLoginSuccessBtn").onclick = () => {
   registerForm.classList.add("d-none");
   registerSuccessBanner.classList.add("d-none");

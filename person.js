@@ -34,6 +34,6 @@ fetch("https://api.tvmaze.com/people")
 
 get("TabPeople").onclick = () => {
   mainBanner.classList.add("d-none");
-  personContainer.classList.remove("d-none");
+  //personContainer.classList.remove("d-none");
   makeBtn("People");
 };

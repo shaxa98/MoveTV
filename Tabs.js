@@ -169,9 +169,10 @@ function makeNetworkContainer() {
   networkContainer.innerHTML = networksHTML;
 }
 
-fetch("https://api.tvmaze.com/people")
+fetch("http://16.171.181.50:2500/network")
   .then((response) => response.json())
   .then((data) => {
+    console.log(data);
     network = data;
     setTimeout(makeNetworkContainer, 1500);
   });
@@ -211,7 +212,7 @@ function makeChanelContainer() {
   ChanelContainer.innerHTML = ChanelsHTML;
 }
 
-fetch("https://api.tvmaze.com/people")
+fetch("http://16.171.181.50:2500/web-chanel")
   .then((response) => response.json())
   .then((data) => {
     Chanel = data;
